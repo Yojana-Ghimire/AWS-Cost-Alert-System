@@ -1,10 +1,10 @@
-# 📊 AWS Cost Spike Analyzer — Lambda + SNS Alert System
+# Real-Time AWS Cost Alert System
 
 An automated serverless solution that analyzes AWS cost data from S3, detects cost spikes using statistical analysis, and sends email alerts via SNS.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 S3 Bucket (CSV Upload)
@@ -24,18 +24,17 @@ Email Notification
 
 ---
 
-## ✨ Features
+##  Features
 
-- 📂 **Auto-triggered** on CSV upload to S3
-- 📈 **Total cost spike detection** using median-based thresholding
-- 🔍 **Per-service spike detection** (EC2, S3, CloudWatch, VPC, etc.)
-- 📧 **Email alerts** via Amazon SNS with spike details and % change
-- 📋 **Fallback summary email** even when no spikes are detected
-- 🛡️ **Robust parsing** — handles messy CSVs, summary rows, and column name variations
+-  **Auto-triggered** on CSV upload to S3
+-  **Total cost spike detection** using median-based thresholding
+-  **Per-service spike detection** (EC2, S3, CloudWatch, VPC, etc.)
+-  **Email alerts** via Amazon SNS with spike details and % change
+-  **Fallback summary email** even when no spikes are detected
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 ├── lambda_function.py       # Main Lambda handler
@@ -44,7 +43,7 @@ Email Notification
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - AWS Account
 - Python 3.12
@@ -54,7 +53,7 @@ Email Notification
 
 ---
 
-## 🚀 Setup & Deployment
+## Setup & Deployment
 
 ### Step 1: Create S3 Bucket
 
@@ -75,7 +74,7 @@ aws sns subscribe \
   --notification-endpoint your@email.com
 ```
 
-> ⚠️ **Check your inbox and click the confirmation link** — emails won't arrive until confirmed.
+>  **Check your inbox and click the confirmation link** — emails won't arrive until confirmed.
 
 ### Step 3: Create Lambda Function
 
@@ -171,7 +170,7 @@ EC2 Instances($) Spike → Date: 2024-01-05, Amount: $38.00, Increase: 102.50%
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 You can adjust the spike sensitivity inside `lambda_function.py`:
 
@@ -201,7 +200,7 @@ MIN_SPIKE_AMOUNT = 0.01  # minimum dollar amount to be flagged
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 | Package | Version | Purpose |
 |---|---|---|
@@ -220,6 +219,6 @@ pip install pandas numpy -t ./package/ \
 
 ---
 
-## 📜 License
+##  License
 
 MIT License — free to use and modify.
