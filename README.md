@@ -5,24 +5,9 @@ An automated serverless solution that analyzes AWS cost data from S3, detects co
 ---
 
 ## Architecture
+<img width="1774" height="887" alt="ChatGPT Image Jun 6, 2026, 02_27_53 PM" src="https://github.com/user-attachments/assets/4b95a0b4-0a5f-445c-bfd0-9e95ad8f0c3a" />
 
-```
-S3 Bucket (CSV Upload)
-        │
-        ▼
-AWS Lambda (Triggered on S3 upload)
-        │
-        ├── Reads & parses CSV cost data
-        ├── Detects spikes (Median-based threshold)
-        │
-        ▼
-Amazon SNS Topic
-        │
-        ▼
-Email Notification
-```
 
----
 
 ##  Features
 
@@ -160,15 +145,8 @@ Your CSV file should follow this structure:
 
 ## 📧 Sample Email Alert
 
-```
-=================== Total Cost Spikes ========================
-Date: 2024-01-05, Amount: $45.20, Increase from Prev Day: 85.30%
+<img width="597" height="211" alt="image" src="https://github.com/user-attachments/assets/1a43e5dd-63a5-48d6-b2da-56ea4f598590" />
 
-=================== Cost Spikes for Services ========================
-EC2 Instances($) Spike → Date: 2024-01-05, Amount: $38.00, Increase: 102.50%
-```
-
----
 
 ## Configuration
 
